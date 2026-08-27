@@ -1,0 +1,26 @@
+th, td{
+
+border: 1px solid red;
+
+padding: 10px;
+
+}
+
+.menus{
+
+background-color: black;
+
+color: white;
+
+}
+
+.button:active{
+
+
+transform: scale(0.67);
+box-shadow: none;
+
+
+
+
+}
