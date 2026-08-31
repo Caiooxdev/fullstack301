@@ -1,0 +1,73 @@
+div{margin: 20px;
+padding: 20px;
+width: 20px;
+height: 20px;
+
+
+
+
+}
+
+
+.bg_azul{background-color: aqua;}
+.bg_verde{background-color: aquamarine;}
+.bg_vermelho{background-color: lightcoral;}
+
+
+
+.bg_azul{background-color: aqua;}
+
+
+.b_solida        { border: 10px solid black;}
+.b_pomtilhada    { border: 5px, dotted, black}
+.b_tracejada     { border: 5px, dashed, black}
+.b_dupla         { border: 5px, double, black}
+
+.arredondado     {border-radius: 10px;}  
+.sombra          {box-shadow: 10px 10px 5px grey;}
+
+#p1{display: inline;}
+#a1{display: block;}
+
+#d1{
+
+    position: absolute;
+     top: 50px;
+     left: 100px;
+
+}
+
+#d2{
+    position: relative;
+    top: 50px;
+    left: 100px;
+}
+#d3{
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
