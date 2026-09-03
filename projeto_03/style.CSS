@@ -20,7 +20,290 @@ color: white;
 transform: scale(0.67);
 box-shadow: none;
 
-
-
-
 }
+
+
+
+.pagina-modelo {
+    margin: 0;
+    background-color: #202020;
+    font-family: "Times New Roman", serif;
+}
+
+
+
+
+.pagina-modelo .pagina {
+    width: 900px;
+    margin: auto;
+    background-color: #d3d3d3;
+   
+    
+}
+
+
+
+ .pagina-modelo  header {
+    height: 150px;
+
+    background-color: #ffdfb0;
+
+    border: 3px solid #1a2d80;
+
+    position: relative;
+}
+
+
+.pagina-modelo  header h1 {
+    color: darkgreen;
+
+    text-align: center;
+
+    padding-top: 45px;
+
+    margin: 0;
+
+    font-size: 30px;
+}
+
+
+.pagina-modelo .logo-cpp {
+    width: 100px;
+
+    position: absolute;
+
+    left: 20px;
+    top: 20px;
+}
+
+
+.pagina-modelo .logo-java {
+    width: 100px;
+
+    position: absolute;
+
+    right: 20px;
+    top: 20px;
+}
+
+
+
+
+.pagina-modelo nav {
+    background-color: #75c4ef;
+
+    text-align: center;
+
+    padding: 10px;
+}
+
+
+.pagina-modelo nav a {
+    color: darkred;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    margin: 0 55px;
+}
+
+
+.pagina-modelo nav a:hover {
+    color: blue;
+}
+
+
+
+.pagina-modelo main {
+    padding: 10px;
+}
+
+
+.pagina-modelo h2 {
+    text-align: center;
+
+    font-size: 20px;
+}
+
+
+.pagina-modelo main p {
+    color: #663399;
+
+    font-family: sans-serif;
+
+    font-size: 14px;
+
+    text-align: center;
+}
+
+
+
+
+.pagina-modelo #livros {
+    margin-top: 20px;
+}
+
+
+.pagina-modelo .livros {
+    text-align: center;
+}
+
+
+.pagina-modelo .livros img {
+    width: 160px;
+    height: 220px;
+
+    object-fit: cover;
+
+    margin: 15px 30px;
+}
+
+
+
+.pagina-modelo #videos {
+    text-align: center;
+
+    margin-top: 20px;
+}
+
+
+.pagina-modelo .midia {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 55px;
+}
+
+
+.pagina-modelo .midia iframe {
+    width: 220px;
+    height: 220px;
+
+    border: none;
+}
+
+
+
+.pagina-modelo #contatos {
+    margin-top: 30px;
+}
+
+
+.pagina-modelo table {
+    margin: auto;
+
+    border-collapse: collapse;
+
+    border: 3px dashed red;
+}
+
+
+.pagina-modelo th,
+ .pagina-modelo td {
+    border: 1px solid red;
+
+    padding: 8px 15px;
+
+    font-size: 12px;
+}
+
+
+.pagina-modelo th {
+    color: red;
+}
+
+
+
+
+.pagina-modelo .consulta {
+    width: 380px;
+
+    margin: 35px auto 15px;
+
+    background-color: yellow;
+
+    padding: 10px;
+
+    color: green;
+
+    font-size: 11px;
+}
+
+
+.pagina-modelo .consulta ul {
+    margin-bottom: 0;
+}
+
+
+.pagina-modelo .consulta a {
+    color: #704000;
+
+    font-weight: bold;
+
+    margin-left: 30px;
+}
+
+
+
+.pagina-modelo footer {
+    height: 105px;
+
+    background-color: #ffdfb0;
+
+   
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 20px;
+}
+
+
+.pagina-modelo footer img {
+    width: 65px;
+}
+
+
+.pagina-modelo footer p {
+    text-align: center;
+
+    font-family: "Comic Sans MS", cursive;
+
+    font-size: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
