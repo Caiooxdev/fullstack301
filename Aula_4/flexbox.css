@@ -62,5 +62,5 @@ section div{
 }
 #d3{
     order: 3;
-    flex-grow: 4;
+    flex-basis: 200px;
 }
