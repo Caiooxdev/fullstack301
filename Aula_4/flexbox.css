@@ -1,0 +1,50 @@
+header{
+ background-color: aqua;   
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+
+}
+
+
+
+h1{
+    background-color: burlywood;
+
+
+}
+
+
+
+.imagem{
+    background-color: blueviolet;
+    color: aliceblue;
+}
+
+nav{
+    background-color: chocolate;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+
+a{
+    background-color: beige;
+}
+
+section{
+height: 500px;
+background-color: darkgrey;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-content: center;
+}
+
+
+section div{
+    background-color: lightsalmon;
+    margin: 10px;
+    text-align: center;
+}
