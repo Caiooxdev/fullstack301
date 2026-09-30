@@ -1,0 +1,346 @@
+/* =================================
+   CONFIGURAÇÃO GERAL
+   ================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    color: #2B2A28;
+
+    background: #FAF7F2;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =================================
+   NAVBAR
+   ================================= */
+
+.navbar {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 20px 10%;
+
+    background: #FFFFFF;
+
+    border-bottom: 1px solid #EDE3D3;
+}
+
+.navbar nav {
+    display: flex;
+
+    gap: 25px;
+}
+
+.navbar a {
+    color: #2B2A28;
+}
+
+
+/* =================================
+   HERO / APRESENTAÇÃO
+   ================================= */
+
+.hero {
+    text-align: center;
+
+    padding: 70px 20px;
+
+    background: #FAF7F2;
+}
+
+.hero img {
+    width: 120px;
+    height: 120px;
+}
+
+.hero h1 {
+    font-size: 40px;
+
+    margin: 20px 0 10px;
+}
+
+.hero h2 {
+    color: #D97757;
+
+    margin-bottom: 20px;
+}
+
+.hero p {
+    max-width: 650px;
+
+    margin: 0 auto;
+
+    color: #5B564C;
+
+    line-height: 1.6;
+}
+
+
+/* =================================
+   BOTÕES
+   ================================= */
+
+.botoes {
+    margin-top: 25px;
+}
+
+.botoes a {
+    display: inline-block;
+
+    padding: 12px 22px;
+
+    margin: 5px;
+
+    border-radius: 25px;
+}
+
+
+/* Primeiro botão */
+
+.botoes a:first-child {
+    background: #3F6C51;
+
+    color: #FFFFFF;
+}
+
+
+/* Segundo botão */
+
+.botoes a:last-child {
+    border: 1px solid #3F6C51;
+
+    color: #3F6C51;
+}
+
+
+/* =================================
+   SOBRE
+   ================================= */
+
+.sobre {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 60px;
+
+    padding: 70px 10%;
+
+    background: #FFFFFF;
+}
+
+.sobre-texto,
+.habilidades {
+    flex: 1;
+}
+
+.sobre h2,
+.sobre h3 {
+    margin-bottom: 20px;
+}
+
+.sobre p {
+    color: #5B564C;
+
+    line-height: 1.7;
+}
+
+
+/* =================================
+   HABILIDADES / BADGES
+   ================================= */
+
+.habilidades span {
+    display: inline-block;
+
+    padding: 8px 14px;
+
+    margin: 5px;
+
+    border-radius: 20px;
+
+    background: #EFE7DB;
+
+    color: #3F6C51;
+}
+
+
+/* =================================
+   PROJETOS
+   ================================= */
+
+.projetos {
+    padding: 70px 10%;
+
+    text-align: center;
+}
+
+.projetos > p {
+    margin-top: 10px;
+
+    color: #5B564C;
+}
+
+
+/* Área dos cards */
+
+.cards {
+    display: flex;
+
+    gap: 25px;
+
+    margin-top: 35px;
+}
+
+
+/* Cada card */
+
+.card {
+    flex: 1;
+
+    overflow: hidden;
+
+    text-align: left;
+
+    background: #FFFFFF;
+
+    border: 1px solid #EDE3D3;
+
+    border-radius: 12px;
+}
+
+
+/* Imagem do projeto */
+
+.card > img {
+    width: 100%;
+
+    display: block;
+}
+
+
+/* Conteúdo do card */
+
+.card-conteudo {
+    padding: 20px;
+}
+
+.card h3 {
+    margin-bottom: 10px;
+}
+
+.card p {
+    margin-bottom: 15px;
+
+    color: #5B564C;
+
+    line-height: 1.5;
+}
+
+
+/* Tags do projeto */
+
+.card span {
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    margin-right: 5px;
+
+    border-radius: 15px;
+
+    background: #F1EAE3;
+
+    color: #8B4B3A;
+}
+
+
+/* =================================
+   RODAPÉ / CONTATO
+   ================================= */
+
+footer {
+    padding: 70px 20px;
+
+    text-align: center;
+
+    background: #2B2A28;
+
+    color: #C9BDA9;
+}
+
+footer h2 {
+    margin-bottom: 20px;
+
+    color: #FFFFFF;
+}
+
+.contatos {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    margin: 30px 0;
+}
+
+.contatos a {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #C9BDA9;
+}
+
+.contatos img {
+    width: 20px;
+    height: 20px;
+}
+
+footer small {
+    color: #C9BDA9;
+}
+
+
+/* =================================
+   RESPONSIVIDADE
+   ================================= */
+
+@media (max-width: 700px) {
+
+    .navbar {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .sobre {
+        flex-direction: column;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    .contatos {
+        flex-direction: column;
+
+        align-items: center;
+    }
+}
