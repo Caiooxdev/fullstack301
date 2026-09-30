@@ -1,346 +1,46 @@
-/* =================================
-   CONFIGURAÇÃO GERAL
-   ================================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-
-    color: #2B2A28;
-
-    background: #FAF7F2;
-}
-
-a {
-    text-decoration: none;
-}
-
-
-/* =================================
-   NAVBAR
-   ================================= */
-
-.navbar {
-    display: flex;
-
-    justify-content: space-between;
-    align-items: center;
-
-    padding: 20px 10%;
-
-    background: #FFFFFF;
-
-    border-bottom: 1px solid #EDE3D3;
-}
-
-.navbar nav {
-    display: flex;
-
-    gap: 25px;
-}
-
-.navbar a {
-    color: #2B2A28;
-}
-
-
-/* =================================
-   HERO / APRESENTAÇÃO
-   ================================= */
-
-.hero {
-    text-align: center;
-
-    padding: 70px 20px;
-
-    background: #FAF7F2;
-}
-
-.hero img {
-    width: 120px;
-    height: 120px;
-}
-
-.hero h1 {
-    font-size: 40px;
-
-    margin: 20px 0 10px;
-}
-
-.hero h2 {
-    color: #D97757;
-
-    margin-bottom: 20px;
-}
-
-.hero p {
-    max-width: 650px;
-
-    margin: 0 auto;
-
-    color: #5B564C;
-
-    line-height: 1.6;
-}
-
-
-/* =================================
-   BOTÕES
-   ================================= */
-
-.botoes {
-    margin-top: 25px;
-}
-
-.botoes a {
-    display: inline-block;
-
-    padding: 12px 22px;
-
-    margin: 5px;
-
-    border-radius: 25px;
-}
-
-
-/* Primeiro botão */
-
-.botoes a:first-child {
-    background: #3F6C51;
-
-    color: #FFFFFF;
-}
-
-
-/* Segundo botão */
-
-.botoes a:last-child {
-    border: 1px solid #3F6C51;
-
-    color: #3F6C51;
-}
-
-
-/* =================================
-   SOBRE
-   ================================= */
-
-.sobre {
-    display: flex;
-
-    justify-content: space-between;
-
-    gap: 60px;
-
-    padding: 70px 10%;
-
-    background: #FFFFFF;
-}
-
-.sobre-texto,
-.habilidades {
-    flex: 1;
-}
-
-.sobre h2,
-.sobre h3 {
-    margin-bottom: 20px;
-}
-
-.sobre p {
-    color: #5B564C;
-
-    line-height: 1.7;
-}
-
-
-/* =================================
-   HABILIDADES / BADGES
-   ================================= */
-
-.habilidades span {
-    display: inline-block;
-
-    padding: 8px 14px;
-
-    margin: 5px;
-
-    border-radius: 20px;
-
-    background: #EFE7DB;
-
-    color: #3F6C51;
-}
-
-
-/* =================================
-   PROJETOS
-   ================================= */
-
-.projetos {
-    padding: 70px 10%;
-
-    text-align: center;
-}
-
-.projetos > p {
-    margin-top: 10px;
-
-    color: #5B564C;
-}
-
-
-/* Área dos cards */
-
-.cards {
-    display: flex;
-
-    gap: 25px;
-
-    margin-top: 35px;
-}
-
-
-/* Cada card */
-
-.card {
-    flex: 1;
-
-    overflow: hidden;
-
-    text-align: left;
-
-    background: #FFFFFF;
-
-    border: 1px solid #EDE3D3;
-
-    border-radius: 12px;
-}
-
-
-/* Imagem do projeto */
-
-.card > img {
-    width: 100%;
-
-    display: block;
-}
-
-
-/* Conteúdo do card */
-
-.card-conteudo {
-    padding: 20px;
-}
-
-.card h3 {
-    margin-bottom: 10px;
-}
-
-.card p {
-    margin-bottom: 15px;
-
-    color: #5B564C;
-
-    line-height: 1.5;
-}
-
-
-/* Tags do projeto */
-
-.card span {
-    display: inline-block;
-
-    padding: 6px 10px;
-
-    margin-right: 5px;
-
-    border-radius: 15px;
-
-    background: #F1EAE3;
-
-    color: #8B4B3A;
-}
-
-
-/* =================================
-   RODAPÉ / CONTATO
-   ================================= */
-
-footer {
-    padding: 70px 20px;
-
-    text-align: center;
-
-    background: #2B2A28;
-
-    color: #C9BDA9;
-}
-
-footer h2 {
-    margin-bottom: 20px;
-
-    color: #FFFFFF;
-}
-
-.contatos {
-    display: flex;
-
-    justify-content: center;
-
-    gap: 25px;
-
-    margin: 30px 0;
-}
-
-.contatos a {
-    display: flex;
-
-    align-items: center;
-
-    gap: 8px;
-
-    color: #C9BDA9;
-}
-
-.contatos img {
-    width: 20px;
-    height: 20px;
-}
-
-footer small {
-    color: #C9BDA9;
-}
-
-
-/* =================================
-   RESPONSIVIDADE
-   ================================= */
-
-@media (max-width: 700px) {
-
-    .navbar {
-        flex-direction: column;
-
-        gap: 15px;
-    }
-
-    .sobre {
-        flex-direction: column;
-    }
-
-    .cards {
-        flex-direction: column;
-    }
-
-    .contatos {
-        flex-direction: column;
-
-        align-items: center;
-    }
-}
+/* RESET: tira margens padrão */
+* { margin: 0; padding: 0; box-sizing: border-box; } /* border-box: padding não aumenta a largura */
+
+body { font-family: Arial, sans-serif; color: #2B2A28; background: #FAF7F2; line-height: 1.6; } /* fonte, cor do texto, fundo */
+a { text-decoration: none; color: inherit; } /* tira sublinhado dos links */
+img { max-width: 100%; } /* imagem nunca passa da caixa */
+
+/* CONTAINER: caixa centralizada que põe os filhos lado a lado */
+.container { max-width: 1000px; margin: 0 auto; padding: 0 24px; display: flex; gap: 24px; } /* margin auto = centraliza; flex = lado a lado */
+
+/* CABEÇALHO */
+header { border-bottom: 1px solid #EDE3D3; } /* linha embaixo */
+header .container { justify-content: space-between; align-items: center; height: 64px; } /* logo à esquerda, menu à direita */
+nav { display: flex; gap: 24px; color: #5B564C; } /* links lado a lado */
+
+/* SEÇÕES: espaço em cima e embaixo */
+section, footer { padding: 80px 0; text-align: center; } /* text-align: centraliza o texto */
+
+/* HERO */
+#inicio img { width: 128px; border-radius: 50%; } /* 50% = círculo */
+#inicio h3 { color: #D97757; } /* cargo em terracota */
+#inicio p { max-width: 520px; margin: 16px auto 24px; color: #5B564C; } /* auto = centraliza o parágrafo */
+
+/* BOTÕES */
+.botao { display: inline-block; padding: 12px 24px; border-radius: 999px; border: 1.5px solid #3F6C51; background: #3F6C51; color: #fff; font-weight: bold; } /* pílula verde */
+.contorno { background: none; color: #3F6C51; } /* só a borda */
+
+/* SOBRE */
+#sobre { background: #fff; text-align: left; } /* fundo branco, texto à esquerda */
+#sobre .container > div { flex: 1; } /* cada coluna divide a largura igualmente */
+
+/* TAGS (habilidades e tecnologias) */
+.tag { display: inline-block; background: #EFE7DB; color: #3F6C51; padding: 4px 14px; border-radius: 999px; font-size: 14px; font-weight: bold; margin: 4px 2px; } /* pílula bege */
+
+/* PROJETOS */
+#projetos p { margin-bottom: 32px; color: #5B564C; }
+.card { flex: 1; background: #fff; border: 1px solid #EDE3D3; border-radius: 14px; padding-bottom: 20px; text-align: left; overflow: hidden; } /* flex:1 = cards com mesma largura */
+.card h3, .card p { padding: 0 20px; } /* espaço interno do texto */
+.card .tag:first-of-type { margin-left: 20px; } /* só a 1ª tag recebe margem, alinhando com o texto */
+.card .tag { background: #F1EAE3; color: #8B4B3A; } /* tag de projeto: cores diferentes */
+
+/* CONTATO */
+footer { background: #2B2A28; color: #C9BDA9; } /* fundo escuro */
+footer h2 { color: #fff; }
+footer img { width: 20px; vertical-align: middle; filter: invert(1); } /* ícone branco */
+footer p { margin-top: 12px; }
