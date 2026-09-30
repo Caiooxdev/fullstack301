@@ -1,0 +1,81 @@
+<!DOCTYPE html> <!-- HTML5 -->
+<html lang="pt-BR"> <!-- raiz da página -->
+<head> <!-- configurações (não aparece na tela) -->
+  <meta charset="UTF-8"> <!-- aceita acentos -->
+  <title>Marina Costa</title> <!-- texto da aba -->
+  <link rel="stylesheet" href="style.css"> <!-- liga o CSS -->
+</head>
+<body> <!-- tudo que aparece na tela -->
+
+  <header> <!-- cabeçalho: logo + menu -->
+    <div class="container"> <!-- centraliza o conteúdo -->
+      <a href="#inicio"><b>Marina Costa</b></a> <!-- logo (b = negrito) -->
+      <nav> <!-- links do menu -->
+        <a href="#sobre">Sobre</a> <!-- vai até id="sobre" -->
+        <a href="#projetos">Projetos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="inicio"> <!-- HERO: apresentação -->
+    <img src="imagens/perfil.svg" alt="Foto de Marina"> <!-- foto redonda -->
+    <h1>Marina Costa</h1> <!-- título principal -->
+    <h3>Desenvolvedora Front-End</h3> <!-- cargo (cor de destaque) -->
+    <p>Crio interfaces web rápidas, acessíveis e agradáveis de usar. Nos últimos 4 anos, trabalhei com startups e agências para transformar protótipos em produtos reais.</p> <!-- texto -->
+    <div> <!-- caixa dos botões -->
+      <a href="#projetos" class="botao">Ver projetos</a> <!-- botão preenchido -->
+      <a href="#contato" class="botao contorno">Entrar em contato</a> <!-- botão só com borda -->
+    </div>
+  </section>
+
+  <section id="sobre"> <!-- SOBRE: fundo branco -->
+    <div class="container"> <!-- 2 colunas lado a lado -->
+      <div> <!-- coluna 1 -->
+        <h2>Sobre mim</h2> <!-- título da seção -->
+        <p>Sou formada em Sistemas de Informação e me especializei em desenvolvimento front-end. Gosto de transformar ideias complexas em telas simples de usar, sempre prestando atenção em performance e acessibilidade. Fora do código, gosto de fotografia e trilhas.</p>
+      </div>
+      <div> <!-- coluna 2 -->
+        <h3>Habilidades</h3> <!-- subtítulo -->
+        <span class="tag">HTML5</span> <!-- pílula (copie para adicionar) -->
+        <span class="tag">CSS3</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">React</span>
+        <span class="tag">Figma</span>
+        <span class="tag">Git</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="projetos"> <!-- PROJETOS: fundo bege -->
+    <h2>Projetos</h2> <!-- título centralizado -->
+    <p>Uma seleção de trabalhos recentes.</p> <!-- frase abaixo -->
+    <div class="container"> <!-- cards lado a lado -->
+      <div class="card"> <!-- card 1 (copie o bloco para mais projetos) -->
+        <img src="imagens/projeto-painel.svg" alt="Painel Financeiro"> <!-- imagem -->
+        <h3>Painel Financeiro</h3> <!-- nome -->
+        <p>Painel de controle financeiro com gráficos interativos e modo escuro.</p> <!-- descrição -->
+        <span class="tag">React</span> <!-- tecnologias -->
+        <span class="tag">Chart.js</span>
+      </div>
+      <div class="card"> <!-- card 2 -->
+        <img src="imagens/projeto-clima.svg" alt="App Clima Agora">
+        <h3>App Clima Agora</h3>
+        <p>Aplicativo de previsão do tempo com busca por cidade e animações suaves.</p>
+        <span class="tag">JavaScript</span>
+        <span class="tag">API REST</span>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contato"> <!-- CONTATO + rodapé: fundo escuro -->
+    <h2>Vamos conversar?</h2> <!-- título branco -->
+    <p>Estou disponível para novos projetos e oportunidades. Me manda uma mensagem!</p>
+    <p><img src="imagens/icon-mail.svg" alt=""> marina.costa@email.com</p> <!-- ícone + texto -->
+    <p><img src="imagens/icon-github.svg" alt=""> github.com/marinacosta</p>
+    <p><img src="imagens/icon-linkedin.svg" alt=""> linkedin.com/in/marinacosta</p>
+    <p>© 2026 Marina Costa. Todos os direitos reservados.</p> <!-- copyright -->
+  </footer>
+
+</body>
+</html>
