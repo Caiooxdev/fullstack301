@@ -13,9 +13,9 @@ div div{
 background-color: bisque;
 height: 600px;
 display: grid;
-grid-template-columns: 200px 400px 200px   /*pode ser % ou px*/
+grid-template-columns: 200px 400px 200px;   /*pode ser % ou px*/
 gap: 10px 10px; 
-justfy-content: space-between;
+justify-content: space-between;
 align-items: center; 
 
 }
