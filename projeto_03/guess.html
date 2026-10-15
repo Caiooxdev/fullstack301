@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Adivinhação</title>
+    <link rel="stylesheet" href="style.CSS">
+</head>
+<body class="guess-page">
+
+    <div class="guess-container">
+        <h1>Jogo da Adivinhação</h1>
+
+        <p>Estou pensando em um número de 0 a 99.</p>
+        <p>Tente adivinhar qual é!</p>
+
+        <input type="number" id="numero" min="0" max="99"
+               placeholder="Digite um número">
+
+        <button onclick="adivinhar()">Tentar</button>
+
+        <p id="resultado"></p>
+    </div>
+
+    <script src="guess.js"></script>
+</body>
+</html>

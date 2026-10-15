@@ -1,0 +1,318 @@
+RESUMÃO HTML + CSS — PROVA DE FULL STACK
+
+1) ORDEM DO SITE
+BODY
+├── HEADER
+│   └── NAV
+├── SECTION INÍCIO
+│   ├── FOTO
+│   └── TEXTO
+├── SECTION SOBRE
+│   ├── TEXTO
+│   └── HABILIDADES
+├── SECTION PROJETOS
+│   ├── CARD 1
+│   ├── CARD 2
+│   └── CARD 3
+└── FOOTER / CONTATO
+
+HTML = estrutura/conteúdo
+CSS = aparência/organização
+
+2) TAGS PRINCIPAIS
+<html>       raiz do HTML
+<head>       configurações que não aparecem
+<meta>       configurações, ex.: UTF-8
+<title>      nome da aba
+<link>       liga HTML ao CSS
+<body>       tudo que aparece na página
+<header>     cabeçalho
+<nav>        menu
+<main>       conteúdo principal
+<section>    seção
+<footer>     rodapé
+<div>        CAIXA / agrupamento
+<h1>         título principal
+<h2>         título de seção
+<h3>         subtítulo
+<p>          parágrafo
+<a>          link
+<img>        imagem
+<span>       pequeno elemento/trecho
+<article>    conteúdo independente/card
+
+3) DIV + CLASS
+<div> = uma caixa.
+class = nome da caixa para o CSS.
+
+HTML:
+<div class="card">...</div>
+
+CSS:
+.card {
+    background: white;
+}
+
+ID usa #:
+#sobre { ... }
+
+CLASS usa .:
+.card { ... }
+
+4) ESTRUTURA BÁSICA
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Site</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <section id="inicio">...</section>
+    <section id="sobre">...</section>
+    <section id="projetos">...</section>
+
+    <footer id="contato">...</footer>
+</body>
+</html>
+
+5) FOTO + TEXTO LADO A LADO
+HTML:
+<div class="apresentacao">
+    <img src="imagens/perfil.svg" alt="Foto">
+    <div>
+        <h1>Seu Nome</h1>
+        <h3>Desenvolvedor Full Stack</h3>
+        <p>Seu texto...</p>
+    </div>
+</div>
+
+CSS:
+.apresentacao {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+display: flex = lado a lado
+align-items: center = alinhamento vertical
+gap = espaço entre
+
+6) CONTATOS LADO A LADO
+HTML:
+<div class="contatos">
+    <p>Email</p>
+    <p>GitHub</p>
+    <p>LinkedIn</p>
+</div>
+
+CSS:
+.contatos {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+Não coloque display:flex no footer se só os contatos devem ficar lado a lado.
+
+7) HABILIDADES 3 POR LINHA
+HTML:
+<div class="habilidades">
+    <span class="tag">HTML5</span>
+    <span class="tag">CSS3</span>
+    <span class="tag">JavaScript</span>
+    <span class="tag">Python</span>
+    <span class="tag">MySQL</span>
+    <span class="tag">Git</span>
+</div>
+
+CSS:
+.habilidades {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+Resultado:
+HTML5       CSS3       JavaScript
+Python      MySQL      Git
+
+8) PROJETOS / CARDS
+HTML:
+<div class="projetos">
+    <div class="card">
+        <img src="imagens/projeto.svg" alt="Projeto">
+        <h3>Nome do projeto</h3>
+        <p>Descrição do projeto.</p>
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+    </div>
+</div>
+
+Vários cards lado a lado:
+.projetos {
+    display: flex;
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+9) CSS — ORDEM PRÁTICA
+Primeiro:
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: white;
+    color: #222;
+}
+
+Depois, de cima para baixo:
+header { ... }
+nav { ... }
+#inicio { ... }
+#sobre { ... }
+#projetos { ... }
+footer { ... }
+
+Depois as classes:
+.container { ... }
+.apresentacao { ... }
+.card { ... }
+.botao { ... }
+
+10) PROPRIEDADES MAIS IMPORTANTES
+display: flex;       = lado a lado
+display: grid;       = linhas/colunas
+repeat(3, 1fr);      = 3 colunas
+gap: 20px;           = espaço entre
+padding: 20px;       = espaço DENTRO
+margin: 20px;        = espaço FORA
+background: #222;    = fundo
+color: white;        = cor do texto
+text-align: center;  = alinhamento do texto
+justify-content:center; = centraliza no flex
+align-items:center;  = centraliza no outro eixo
+width: 100%;         = largura
+max-width: 1200px;   = largura máxima
+border-radius: 10px; = cantos arredondados
+border: 1px solid;   = borda
+font-size: 20px;     = tamanho
+font-weight: bold;   = negrito
+
+11) FLEX — DECORAR
+display: flex; = lado a lado
+justify-content: center; = centraliza
+justify-content: space-between; = distribui
+align-items: center; = alinha verticalmente
+gap: 20px; = espaço entre itens
+
+12) MENU → SEÇÃO
+<a href="#sobre">Sobre</a>
+<section id="sobre">
+
+O # do href aponta para o id.
+
+13) IMAGEM
+<img src="imagens/perfil.svg" alt="Foto">
+
+src = caminho da imagem
+alt = descrição
+
+Se src estiver vazio, a imagem não aparece.
+
+14) BOTÃO COM LINK
+<a href="#projetos" class="botao">Ver projetos</a>
+
+.botao {
+    display: inline-block;
+    padding: 12px 24px;
+    background: #3F6C51;
+    color: white;
+    text-decoration: none;
+    border-radius: 999px;
+}
+
+15) ROTEIRO PARA A PROVA
+1. Abra a pasta fornecida pelo professor.
+2. Abra a pasta no VS Code.
+3. Tenha index.html e style.css.
+4. Monte PRIMEIRO o HTML.
+5. Faça HEADER/NAV.
+6. Faça INÍCIO.
+7. Faça SOBRE/HABILIDADES.
+8. Faça PROJETOS/CARDS.
+9. Faça CONTATO/FOOTER.
+10. Use div para agrupar quando precisar organizar.
+11. Depois faça o CSS de cima para baixo.
+12. Teste no navegador.
+13. Confira imagens, textos, links e classes.
+14. Faça o ZIP da pasta exigida e envie no Moodle, conforme as instruções da prova.
+
+16) SE TRAVAR NA PROVA
+Duas coisas lado a lado?
+→ div envolvendo as duas + display:flex
+
+3 por linha?
+→ display:grid + grid-template-columns: repeat(3, 1fr)
+
+Espaço dentro?
+→ padding
+
+Espaço fora?
+→ margin
+
+Espaço entre itens?
+→ gap
+
+Estilizar class?
+→ .nome-da-class
+
+Estilizar id?
+→ #nome-do-id
+
+Imagem?
+→ <img src="..." alt="...">
+
+Link?
+→ <a href="...">Texto</a>
+
+Caixa?
+→ <div>
+
+Seção?
+→ <section>
+
+17) MAPA FINAL
+HTML = ORGANIZA
+CSS = DEIXA BONITO E ORGANIZA NA TELA
+
+flex = lado a lado
+grid = linhas/colunas
+gap = espaço entre
+padding = espaço dentro
+margin = espaço fora
+background = fundo
+color = texto
+# = ID
+. = CLASS
+
+NÃO TENTE DECORAR UM SITE INTEIRO.
+MONTE A ESTRUTURA PRIMEIRO E DEPOIS ESTILIZE.

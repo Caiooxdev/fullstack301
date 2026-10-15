@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Teste</title>
+    
+    <!--  AQUI FICA O CSS -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f9;
+        }
+
+        button {
+            background-color: #007bff; /* Azul */
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Azul escuro */
+        }
+
+        p {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <!--  AQUI FICA O HTML -->
+    <button id="meuBotao">Clique aqui</button>
+    <p id="mensagem"></p>
+
+    <!--  AQUI FICA O JAVASCRIPT -->
+    <script>
+        const botao = document.getElementById('meuBotao');
+        const mensagem = document.getElementById('mensagem');
+
+        botao.addEventListener('click', function() {
+            botao.style.backgroundColor = '#28a745'; /* Muda para Verde */
+            mensagem.innerText = ' Incrível! O JavaScript funcionou perfeitamente.';
+        });
+    </script>
+
+</body>
+</html>
