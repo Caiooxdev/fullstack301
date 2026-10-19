@@ -1,0 +1,46 @@
+/* RESET: tira margens padrão */
+* { margin: 0; padding: 0; box-sizing: border-box; } /* border-box: padding não aumenta a largura */
+
+body { font-family: Arial, sans-serif; color: #2B2A28; background: #FAF7F2; line-height: 1.6; } /* fonte, cor do texto, fundo */
+a { text-decoration: none; color: inherit; } /* tira sublinhado dos links */
+img { max-width: 100%; } /* imagem nunca passa da caixa */
+
+/* CONTAINER: caixa centralizada que põe os filhos lado a lado */
+.container { max-width: 1000px; margin: 0 auto; padding: 0 24px; display: flex; gap: 24px; } /* margin auto = centraliza; flex = lado a lado */
+
+/* CABEÇALHO */
+header { border-bottom: 1px solid #EDE3D3; } /* linha embaixo */
+header .container { justify-content: space-between; align-items: center; height: 64px; } /* logo à esquerda, menu à direita */
+nav { display: flex; gap: 24px; color: #5B564C; } /* links lado a lado */
+
+/* SEÇÕES: espaço em cima e embaixo */
+section, footer { padding: 80px 0; text-align: center; } /* text-align: centraliza o texto */
+
+/* HERO */
+#inicio img { width: 128px; border-radius: 50%; } /* 50% = círculo */
+#inicio h3 { color: #D97757; } /* cargo em terracota */
+#inicio p { max-width: 520px; margin: 16px auto 24px; color: #5B564C; } /* auto = centraliza o parágrafo */
+
+/* BOTÕES */
+.botao { display: inline-block; padding: 12px 24px; border-radius: 999px; border: 1.5px solid #3F6C51; background: #3F6C51; color: #fff; font-weight: bold; } /* pílula verde */
+.contorno { background: none; color: #3F6C51; } /* só a borda */
+
+/* SOBRE */
+#sobre { background: #fff; text-align: left; } /* fundo branco, texto à esquerda */
+#sobre .container > div { flex: 1; } /* cada coluna divide a largura igualmente */
+
+/* TAGS (habilidades e tecnologias) */
+.tag { display: inline-block; background: #EFE7DB; color: #3F6C51; padding: 4px 14px; border-radius: 999px; font-size: 14px; font-weight: bold; margin: 4px 2px; } /* pílula bege */
+
+/* PROJETOS */
+#projetos p { margin-bottom: 32px; color: #5B564C; }
+.card { flex: 1; background: #fff; border: 1px solid #EDE3D3; border-radius: 14px; padding-bottom: 20px; text-align: left; overflow: hidden; } /* flex:1 = cards com mesma largura */
+.card h3, .card p { padding: 0 20px; } /* espaço interno do texto */
+.card .tag:first-of-type { margin-left: 20px; } /* só a 1ª tag recebe margem, alinhando com o texto */
+.card .tag { background: #F1EAE3; color: #8B4B3A; } /* tag de projeto: cores diferentes */
+
+/* CONTATO */
+footer { background: #2B2A28; color: #C9BDA9; } /* fundo escuro */
+footer h2 { color: #fff; }
+footer img { width: 20px; vertical-align: middle; filter: invert(1); } /* ícone branco */
+footer p { margin-top: 12px; }

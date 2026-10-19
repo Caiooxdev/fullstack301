@@ -282,6 +282,34 @@ box-shadow: none;
 
 
 
+body.guess-page {
+    background-color: #e8f0fe;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.guess-container {
+    text-align: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.guess-container input,
+.guess-container button {
+    padding: 10px;
+    margin: 5px;
+}
+
+#resultado {
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
 
 
 
