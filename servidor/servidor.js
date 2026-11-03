@@ -34,4 +34,6 @@ app.post("/cadastrar", function(req, res){
     let email = req.body.email;
     let senha = req.body.senha;
     console.log(nome, sobrenome, email, senha);
+
+    res.send("Dados recebidos com POST");
 })
