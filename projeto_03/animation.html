@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>LAB 6 - Animação</title>
+    <link rel="stylesheet" href="style.CSS">
+    <style>
+        .pagina-animacao {
+            text-align: center;
+            background-color: white;
+        }
+
+        .pagina-animacao canvas {
+            display: block;
+            margin: 20px auto;
+            border: 1px solid black;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body class="pagina-animacao">
+
+    <h1>LAB 6 - Animação</h1>
+    <a href="projects.html">Voltar aos projetos</a>
+
+    <p>Movimente o mouse dentro do quadrado.</p>
+
+    <canvas id="animacao" width="300" height="300"></canvas>
+
+    <script>
+        const canvas = document.getElementById("animacao");
+        const ctx = canvas.getContext("2d");
+
+        const raio = 25;
+        let x = 150;
+        let y = 150;
+
+        // Desenhar imagem
+        function desenhar() {
+            ctx.clearRect(0, 0, 300, 300);
+
+            ctx.beginPath();
+            ctx.arc(x, y, raio, 0, Math.PI * 2);
+            ctx.fillStyle = "blue";
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(x - 8, y - 5, 3, 0, Math.PI * 2);
+            ctx.arc(x + 8, y - 5, 3, 0, Math.PI * 2);
+            ctx.fillStyle = "white";
+            ctx.fill();
+
+            ctx.beginPath();
+            ctx.arc(x, y + 3, 12, 0, Math.PI);
+            ctx.strokeStyle = "white";
+            ctx.lineWidth = 2;
+            ctx.stroke();
+        }
+
+        // Controlar movimento do mouse
+        canvas.addEventListener("mousemove", function(evento) {
+            const area = canvas.getBoundingClientRect();
+
+            const mouseX = (evento.clientX - area.left) * canvas.width / area.width;
+            const mouseY = (evento.clientY - area.top) * canvas.height / area.height;
+
+            x = Math.max(raio, Math.min(300 - raio, mouseX));
+            y = Math.max(raio, Math.min(300 - raio, mouseY));
+
+            desenhar();
+        });
+
+        // Desenho inicial
+        desenhar();
+    </script>
+
+</body>
+</html>

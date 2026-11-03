@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>LAB 5 - Canvas</title>
+    <link rel="stylesheet" href="style.CSS">
+
+    <style>
+        body {
+            text-align: center;
+            background-color: white;
+        }
+
+        canvas {
+            display: block;
+            margin: 20px auto;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>LAB 5 - Canvas</h1>
+    <a href="projects.html">Voltar aos projetos</a>
+
+    <h2>Desenho geométrico</h2>
+    <canvas id="desenho" width="300" height="300"></canvas>
+
+    <h2>Desenho da casa</h2>
+    <canvas id="casa" width="300" height="300"></canvas>
+
+    <script>
+        const canvas = document.getElementById("desenho");
+        const ctx = canvas.getContext("2d");
+
+        // Desenhar quadrado
+        function desenhar_quadrado(x, y, largura, altura, cor, contexto = ctx) {
+            contexto.fillStyle = cor;
+            contexto.fillRect(x, y, largura, altura);
+        }
+
+        // Desenhar linha
+        function desenhar_linha(x1, y1, x2, y2, cor, contexto = ctx) {
+            contexto.beginPath();
+            contexto.strokeStyle = cor;
+            contexto.lineWidth = 1;
+            contexto.moveTo(x1, y1);
+            contexto.lineTo(x2, y2);
+            contexto.stroke();
+        }
+
+        // Desenhar arco
+        function desenhar_arco(x, y, raio, inicio, fim, cor, preencher = false, contexto = ctx) {
+            contexto.beginPath();
+            contexto.arc(x, y, raio, inicio, fim);
+
+            if (preencher) {
+                contexto.fillStyle = cor;
+                contexto.fill();
+            } else {
+                contexto.strokeStyle = cor;
+                contexto.lineWidth = 1;
+                contexto.stroke();
+            }
+        }
+
+        // Escrever texto
+        function escrever(texto, x, y, cor, contexto = ctx) {
+            contexto.fillStyle = cor;
+            contexto.font = "20px Arial";
+            contexto.fillText(texto, x, y);
+        }
+
+        // Desenho geométrico
+        escrever("Canvas", 115, 50, "black");
+
+        // Quadrados superiores
+        desenhar_quadrado(0, 0, 50, 50, "blue");
+        desenhar_quadrado(250, 0, 50, 50, "red");
+
+        // Quadrados laterais
+        desenhar_quadrado(0, 120, 30, 60, "cyan");
+        desenhar_quadrado(270, 135, 30, 30, "cyan");
+
+        // Quadrado central
+        desenhar_quadrado(110, 150, 40, 40, "red");
+
+        // Formato L amarelo
+        desenhar_quadrado(0, 240, 30, 60, "yellow");
+        desenhar_quadrado(0, 270, 60, 30, "yellow");
+
+        // Formato L preto
+        desenhar_quadrado(270, 240, 30, 60, "black");
+        desenhar_quadrado(240, 270, 60, 30, "black");
+
+        // Linhas
+        desenhar_linha(50, 50, 150, 150, "blue");
+        desenhar_linha(250, 50, 150, 150, "red");
+        desenhar_linha(150, 150, 150, 260, "gray");
+        desenhar_linha(0, 150, 300, 150, "green");
+
+        // Arcos superiores
+        desenhar_arco(150, 150, 80, Math.PI, 2 * Math.PI, "green");
+        desenhar_arco(150, 150, 60, Math.PI, 2 * Math.PI, "green");
+
+        // Círculo superior
+        desenhar_arco(150, 115, 15, 0, 2 * Math.PI, "cyan", true);
+        desenhar_arco(150, 115, 15, 0, 2 * Math.PI, "blue");
+
+        // Círculos inferiores
+        desenhar_arco(70, 220, 15, 0, 2 * Math.PI, "yellow", true);
+        desenhar_arco(70, 220, 15, 0, 2 * Math.PI, "green");
+
+        desenhar_arco(220, 220, 15, 0, 2 * Math.PI, "yellow", true);
+        desenhar_arco(220, 220, 15, 0, 2 * Math.PI, "green");
+
+        // Arco inferior
+        desenhar_arco(150, 300, 80, Math.PI, 2 * Math.PI, "green");
+
+        // Semicírculo inferior
+        desenhar_arco(150, 300, 40, Math.PI, 2 * Math.PI, "cyan", true);
+        desenhar_arco(150, 300, 40, Math.PI, 2 * Math.PI, "green");
+
+
+        // Desenho da casa
+        const canvasCasa = document.getElementById("casa");
+        const casaCtx = canvasCasa.getContext("2d");
+
+        // Fundo
+        desenhar_quadrado(0, 0, 300, 300, "#8FFFD6", casaCtx);
+
+        // Sol
+        desenhar_arco(225, 75, 38, 0, Math.PI * 2, "yellow", true, casaCtx);
+
+        // Chão
+        desenhar_quadrado(0, 225, 300, 75, "gray", casaCtx);
+
+        // Lago
+        desenhar_arco(0, 300, 112, 1.5 * Math.PI, 2 * Math.PI, "#448AFF", true, casaCtx);
+        desenhar_quadrado(0, 225, 38, 75, "#448AFF", casaCtx);
+        desenhar_arco(38, 300, 112, Math.PI, 1.5 * Math.PI, "#448AFF", true, casaCtx);
+
+        // Troncos das árvores
+        desenhar_quadrado(38, 175, 15, 50, "#88451B", casaCtx);
+        desenhar_quadrado(263, 205, 15, 58, "#88451B", casaCtx);
+
+        // Copas das árvores
+        desenhar_arco(45, 173, 23, 0, Math.PI * 2, "forestgreen", true, casaCtx);
+        desenhar_arco(270, 210, 23, 0, Math.PI * 2, "forestgreen", true, casaCtx);
+
+        // Parede da casa
+        desenhar_quadrado(112, 150, 76, 75, "#874018", casaCtx);
+
+        // Telhado
+        casaCtx.beginPath();
+        casaCtx.moveTo(112, 150);
+        casaCtx.lineTo(150, 112);
+        casaCtx.lineTo(188, 150);
+        casaCtx.closePath();
+        casaCtx.fillStyle = "tomato";
+        casaCtx.fill();
+
+        // Janelas
+        desenhar_quadrado(120, 165, 23, 23, "#35B5F0", casaCtx);
+        desenhar_quadrado(157, 165, 23, 23, "#35B5F0", casaCtx);
+
+        // Porta
+        desenhar_quadrado(143, 188, 15, 37, "#5B351A", casaCtx);
+
+    </script>
+
+</body>
+</html>
