@@ -7,12 +7,14 @@ const app = express();
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(__dirname));
+
 
 // Página inicial
 app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "projects.html"));
 });
+
+app.use(express.static(__dirname));
 
 // Página de cadastro
 app.get("/cadastra", function(req, res) {
