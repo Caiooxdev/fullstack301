@@ -65,3 +65,9 @@ app.post("/cadastrar", function(req, res){
       };
     });
   });
+
+
+  app.get("/for", function(req, res){
+    let qtde = req.query.qtde;
+    res.render("for.ejs", {qtde_template: qtde});
+  });
