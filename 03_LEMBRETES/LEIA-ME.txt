@@ -95,3 +95,8 @@ IMPORTANTE PARA A ENTREGA
 - Confirme quais arquivos o professor exige. Se penalizar arquivos extras,
   retire este guia da COPIA DE ENTREGA, mas mantenha-o no repositorio de estudo.
 - Nao execute os tres modelos ao mesmo tempo na mesma porta.
+
+
+VERSAO SIMPLES: fundo de uma cor, formulario estreito centralizado, sem imagem ou faixa colorida.
+Edite public/style.css: --fundo, --botao e .container max-width.
+O backend e MongoDB foram mantidos iguais ao modelo revisado.
