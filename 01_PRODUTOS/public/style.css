@@ -1,0 +1,39 @@
+/* ===== 1. CORES: ALTERE AQUI NA PROVA ===== */
+:root {
+  --fundo: #eef3f8;        /* COR DE FUNDO DA PAGINA */
+  --cabecalho: #17365d;    /* COR DO CABECALHO */
+  --botao: #1769aa;        /* COR DO BOTAO */
+  --texto: #1d2939;       /* COR DO TEXTO */
+  --cartao: #ffffff;       /* COR DO FORMULARIO */
+}
+/* ===== 2. PAGINA ===== */
+* { box-sizing: border-box; }
+body { margin: 0; font-family: Arial, sans-serif; background: var(--fundo); color: var(--texto); }
+header { background: var(--cabecalho); color: white; padding: 18px; text-align: center; }
+/* ===== 3. CENTRALIZAR OU DESLOCAR O CONTEUDO ===== */
+.container {
+  width: 90%; max-width: 900px; margin: 30px auto; /* AUTO = CENTRALIZA O BLOCO */
+  /* margin-left: 0; margin-right: auto; = BLOCO NA ESQUERDA */
+  /* margin-left: auto; margin-right: 0; = BLOCO NA DIREITA */
+}
+/* ===== 4. TEXTO ===== */
+h1, h2 { text-align: center; /* TROQUE POR left (ESQUERDA) OU right (DIREITA) */ }
+/* ===== 5. FORMULARIO E CARTOES ===== */
+.cartao { background: var(--cartao); padding: 24px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 3px 12px #0001; }
+.formulario { display: flex; flex-direction: column; gap: 12px; /* column=EMBAIXO; row=LADO A LADO */ }
+input, textarea, button { font: inherit; padding: 12px; border-radius: 6px; }
+input, textarea { width: 100%; border: 1px solid #bbb; }
+button, .botao { border: 0; background: var(--botao); color: white; cursor: pointer; text-decoration: none; display: inline-block; padding: 12px 18px; border-radius: 6px; }
+/* ===== 6. DIREITA, ESQUERDA OU CENTRO (FLEX) ===== */
+.acoes { display: flex; flex-direction: row; justify-content: center; gap: 12px; flex-wrap: wrap; }
+/* justify-content: flex-start = ESQUERDA; center = CENTRO; flex-end = DIREITA */
+/* ===== 7. IMAGEM: TAMANHO E POSICAO ===== */
+.imagem { display: block; width: 160px; max-width: 100%; height: auto; margin: 12px auto; /* CENTRALIZADA */ }
+/* margin-left: 0; margin-right: auto; = ESQUERDA */
+/* margin-left: auto; margin-right: 0; = DIREITA */
+/* ===== 8. ESPACOS ===== */
+/* padding = ESPACO INTERNO; margin = ESPACO EXTERNO; gap = ENTRE ELEMENTOS */
+.registros { padding-left: 25px; }
+.registros li { padding: 8px; border-bottom: 1px solid #ddd; overflow-wrap: anywhere; }
+/* ===== 9. RESPONSIVO (TELA PEQUENA) ===== */
+@media (max-width: 600px) { .container { width: 96%; margin: 15px auto; } .cartao { padding: 14px; } }

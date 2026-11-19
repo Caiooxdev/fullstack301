@@ -1,0 +1,1 @@
+{"name":"modelo-lembretes","version":"1.0.0","private":true,"scripts":{"start":"node servidor.js"},"dependencies":{"express":"^4.21.2","ejs":"^3.1.10","mongodb":"^6.16.0"}}

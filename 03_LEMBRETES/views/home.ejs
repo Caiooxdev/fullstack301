@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Meus lembretes</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+<!-- ALTERAR NA PROVA: titulo e cabecalho conforme imagem do professor -->
+<header><h1>Meus lembretes</h1></header>
+<main class="container">
+  <section class="cartao">
+    <!-- ALTERAR NA PROVA: imagem; pode trocar src por outro arquivo em public/ -->
+    <img class="imagem" src="/lembrete.png" alt="Ícone de lembrete">
+    <h2>Cadastrar lembrete</h2>
+    <!-- ALTERAR NA PROVA: campos e action; os name devem coincidir com servidor.js -->
+    <form class="formulario" action="/cadastrar" method="POST">
+      <label for="titulo">Título</label><input id="titulo" name="titulo" type="text" required>
+      <label for="descricao">Descrição</label><textarea id="descricao" name="descricao" rows="3" required></textarea>
+      <label for="local">Local</label><input id="local" name="local" type="text" required>
+      <label for="data">Data</label><input id="data" name="data" type="date" required>
+      <label for="hora">Hora</label><input id="hora" name="hora" type="time" required>
+      <button type="submit">Salvar lembrete</button>
+    </form>
+  </section>
+  <section class="cartao">
+    <h2>Lista de lembretes</h2>
+    <!-- FIND() no servidor; EJS mostra o resultado como LISTA -->
+    <ul class="registros">
+      <% if (registros.length === 0) { %><li>Nenhum lembrete cadastrado.</li><% } %>
+      <% registros.forEach(function(item) { %>
+        <li><strong><%= item.titulo %></strong> — <%= item.descricao %> — <%= item.local %> — <%= item.data %> às <%= item.hora %></li>
+      <% }); %>
+    </ul>
+  </section>
+</main>
+</body></html>

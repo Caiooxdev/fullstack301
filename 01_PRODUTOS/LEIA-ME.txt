@@ -1,0 +1,100 @@
+MODELO PRODUTOS - GUIA RAPIDO
+
+1) Abra SOMENTE a pasta 01_PRODUTOS no VS Code.
+2) Inicie o MongoDB local (localhost:27017).
+3) No terminal do VS Code: npm.cmd install
+4) Depois: npm.cmd start
+5) Navegador: http://localhost
+6) No MongoDB Compass: mongodb://localhost:27017 > prova_fullstack > produtos. Clique Find para atualizar.
+7) Para encerrar o servidor: Ctrl+C.
+
+ALTERAR NA PROVA:
+- public/style.css: cores, centralizacao, direita/esquerda, tamanhos, espacamentos.
+- views/home.ejs: titulo, imagem, formulario, lista.
+- views/resposta.ejs: resposta e botao voltar.
+- servidor.js: nomes de campos (req.body e registro), banco/colecao, rotas.
+- Procure ALTERAR NA PROVA usando Ctrl+F.
+- Se a imagem da prova tiver outro desenho, troque public/imagem.svg ou altere o src no HTML.
+- Se a porta 80 estiver ocupada, pare o outro servidor com Ctrl+C antes de iniciar.
+- Rode somente UM dos dois projetos por vez: ambos usam porta 80.
+- No GitHub, nao envie node_modules.
+- Para entrega, confira o que o professor pede; remova LEIA-ME.txt se arquivos extras forem penalizados.
+
+OBS: este modelo nao tem login; cadastro de pessoas e diferente de autenticacao.
+
+CONEXAO NA FACULDADE:
+- Se o MongoDB estiver instalado e funcionando na mesma maquina, nao precisa alterar nada.
+- Se o professor passar outra URI, no PowerShell use: $env:MONGO_URI="mongodb://HOST:27017" (substitua HOST).
+- MongoDB Compass apenas mostra os dados; o servico MongoDB precisa estar rodando.
+- Se a porta 80 estiver ocupada, encerre o outro servidor. Para teste alternativo: $env:PORT="3000" e acesse http://localhost:3000.
+- Para verificar: npm.cmd install, npm.cmd start, cadastrar, voltar, ver a lista e atualizar Find no Compass.
+- Se a maquina da faculdade nao tiver Node.js, npm ou acesso ao MongoDB, a conexao nao sera automatica.
+
+
+========== GUIA DE EMERGENCIA: ERROS NO TERMINAL ==========
+
+PASSO A PASSO NA MAQUINA DA FACULDADE (PowerShell do VS Code)
+1. Extraia o ZIP e abra a PASTA DO PROJETO no VS Code (Arquivo > Abrir Pasta).
+2. Terminal > Novo Terminal. Confira se esta na pasta que tem package.json.
+   Se nao estiver, use: cd "CAMINHO_DA_PASTA"
+3. Confira Node e npm: node -v  e  npm.cmd -v
+4. Com MongoDB local rodando, execute: npm.cmd install
+5. Depois execute: npm.cmd start
+6. Abra http://localhost (porta 80). Cadastre um registro e confira a lista.
+7. No MongoDB Compass, conecte em mongodb://localhost:27017,
+   abra o banco prova_fullstack e a colecao deste modelo e clique Find.
+8. Para parar: no terminal do servidor pressione Ctrl+C.
+
+ERRO: 'npm' nao e reconhecido / 'node' nao e reconhecido
+- Verifique com node -v e npm.cmd -v.
+- Se ambos nao funcionarem, Node.js pode nao estar instalado ou no PATH.
+  Peca acesso/instalacao ao responsavel da maquina; reinicie o terminal apos instalar.
+
+ERRO: 'npm.ps1 nao pode ser carregado' / execucao de scripts desabilitada
+- No PowerShell, use npm.cmd install e npm.cmd start (nao apenas npm).
+
+ERRO: Cannot find module 'express', 'ejs', 'mongodb' ou 'dotenv'
+- Abra o terminal na pasta que contem package.json e rode npm.cmd install.
+- Depois rode npm.cmd start novamente.
+
+ERRO: ENOENT / package.json not found
+- Voce abriu a pasta errada. Use Arquivo > Abrir Pasta e escolha a pasta
+  do projeto, onde esta o arquivo package.json.
+
+ERRO: EADDRINUSE / porta 80 ja esta sendo usada
+- Pare o servidor anterior com Ctrl+C e tente de novo.
+- Para testar em outra porta, ANTES de iniciar execute:
+  $env:PORT="3000"
+  npm.cmd start
+  Depois abra http://localhost:3000.
+- Na prova, volte para a porta exigida pelo professor se ele pedir localhost sem porta.
+
+ERRO: MongoServerSelectionError / ECONNREFUSED 127.0.0.1:27017
+- O servidor MongoDB nao esta acessivel. O Compass sozinho NAO inicia o MongoDB.
+- Verifique se o servico MongoDB esta iniciado na maquina.
+- No Compass, teste mongodb://localhost:27017.
+- Se a faculdade usar outro servidor, confirme a URI com o professor.
+  No PowerShell, ANTES de iniciar o projeto, use:
+  $env:MONGO_URI="mongodb://HOST:27017"
+  Substitua HOST pelo endereco correto. Nao invente credenciais.
+
+ERRO: 'Cannot GET /' ou pagina nao abre
+- Verifique se o terminal mostra que o servidor iniciou.
+- Confira o endereco: http://localhost (ou http://localhost:3000 se mudou PORT).
+- Se alterou o servidor, salve o arquivo, pare com Ctrl+C e reinicie.
+
+ERRO: pagina abre mas nao cadastra / lista vazia
+- Confira se o terminal exibiu erro depois de enviar o formulario.
+- No HTML, cada input deve ter 'name' igual ao campo lido em req.body.
+- Confira o banco prova_fullstack, a colecao correta e clique Find no Compass.
+- Salve as alteracoes e reinicie o servidor se mudou servidor.js.
+
+ERRO: imagem ou CSS nao aparece
+- Confira o caminho do arquivo em public/ e o src/href no HTML/EJS.
+- Atualize o navegador com Ctrl+F5.
+
+IMPORTANTE PARA A ENTREGA
+- Nao envie node_modules ao GitHub.
+- Confirme quais arquivos o professor exige. Se penalizar arquivos extras,
+  retire este guia da COPIA DE ENTREGA, mas mantenha-o no repositorio de estudo.
+- Nao execute os tres modelos ao mesmo tempo na mesma porta.
