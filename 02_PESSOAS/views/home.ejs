@@ -1,34 +1,30 @@
 <!DOCTYPE html>
-<html lang="pt-BR"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Cadastro de pessoas</title><link rel="stylesheet" href="/style.css"></head>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Pessoas</title>
+    <!-- Carrega o CSS separado da pasta public. -->
+    <link rel="stylesheet" href="/style.css">
+</head>
 <body>
-  <!-- ALTERAR NA PROVA: CABECALHO E TITULO -->
-  <header><h1>Cadastro de Pessoas</h1></header>
-  <main class="container">
-    <section class="cartao">
-      <h2>Novo cadastro</h2>
-      <!-- ALTERAR NA PROVA: ACTION e CAMPOS, mantendo os mesmos nomes no servidor -->
-      <form class="formulario" action="/cadastrar" method="POST">
-        <!-- ALTERAR NA PROVA: CAMPO NOME (name deve ser igual ao servidor.js) -->
-        <label for="nome">Nome</label>
-        <input id="nome" name="nome" type="text"  required>
-        <!-- ALTERAR NA PROVA: CAMPO SOBRENOME (name deve ser igual ao servidor.js) -->
-        <label for="sobrenome">Sobrenome</label>
-        <input id="sobrenome" name="sobrenome" type="text"  required>
-        <!-- ALTERAR NA PROVA: CAMPO E-MAIL (name deve ser igual ao servidor.js) -->
-        <label for="email">E-mail</label>
-        <input id="email" name="email" type="email"  required>
-        <button type="submit">Cadastrar</button>
-      </form>
-    </section>
-    <section class="cartao">
-      <h2>Lista de pessoas</h2>
-      <!-- EJS: mostra os registros encontrados com find() no MongoDB -->
-      <ul class="registros">
-        <% if (registros.length === 0) { %><li>Nenhum registro cadastrado.</li><% } %>
-        <% registros.forEach(function(item) { %>
-          <li><%= item.nome %> — <%= item.sobrenome %> — <%= item.email %></li>
-        <% }); %>
-      </ul>
-    </section>
-  </main>
-</body></html>
+    <!-- Titulo exibido na pagina. -->
+    <h1>Cadastro de Pessoas</h1>
+    <!-- Formulario: action indica a rota; method POST envia dados para cadastro. -->
+    <form action="/cadastrar" method="POST">
+    <p>Nome:</p>
+    <!-- Campo do formulario: name deve ser igual ao campo lido em req.body. -->
+    <input type="text" name="nome" required>
+    <p>Sobrenome:</p>
+    <!-- Campo do formulario: name deve ser igual ao campo lido em req.body. -->
+    <input type="text" name="sobrenome" required>
+    <p>E-mail:</p>
+    <!-- Campo do formulario: name deve ser igual ao campo lido em req.body. -->
+    <input type="email" name="email" required>
+        <br><br>
+        <!-- Campo do formulario: name deve ser igual ao campo lido em req.body. -->
+        <input type="submit" value="Cadastrar">
+    </form>
+    <!-- Link para navegar entre formulario e lista. -->
+    <p><a href="/lista">Ver pessoas cadastrados</a></p>
+</body>
+</html>

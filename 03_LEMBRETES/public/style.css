@@ -1,30 +1,42 @@
-/* ===== ALTERAR NA PROVA: CORES ===== */
-:root {
-  --fundo: #e8f0e8;       /* COR DE FUNDO DA PAGINA */
-  --botao: #287346;       /* COR DO BOTAO */
-  --texto: #222222;       /* COR DO TEXTO */
-  --formulario: #ffffff;  /* FUNDO DO FORMULARIO */
+/* ALTERAR NA PROVA: cor do fundo */
+/* Estilos de body: altere as propriedades abaixo para adaptar a prova. */
+body {
+  /* Cor de fundo. */
+    background-color: lightgray;
+  /* Fonte do texto. */
+    font-family: Arial, sans-serif;
+    text-align: center; /* centraliza o título e os textos */
 }
-/* ===== ALTERAR NA PROVA: TAMANHO E CENTRALIZACAO ===== */
-* { box-sizing: border-box; }
-body { margin: 0; background: var(--fundo); color: var(--texto); font-family: Arial, sans-serif; }
-header { text-align: center; padding: 12px 8px 0; } /* TITULO CENTRALIZADO, SEM FAIXA */
-h1 { font-size: 24px; margin: 14px 0; } /* TAMANHO DO TITULO */
-h2 { font-size: 18px; text-align: center; margin: 0 0 16px; }
-.container {
-  width: 92%; max-width: 400px; /* DIMINUIR: 350px / AUMENTAR: 500px */
-  margin: 16px auto; /* AUTO CENTRALIZA; 16px = ESPACO EM CIMA */
-  /* ESQUERDA: margin-left: 0; margin-right: auto; */
-  /* DIREITA: margin-left: auto; margin-right: 0; */
+
+/* ALTERAR NA PROVA: largura e posição do formulário */
+/* Estilos de form: altere as propriedades abaixo para adaptar a prova. */
+form {
+    width: 250px; /* aumenta ou diminui a largura */
+    margin: 20px auto; /* auto centraliza horizontalmente */
+    text-align: left; /* nomes dos campos à esquerda, acima dos inputs */
 }
-.cartao { background: var(--formulario); padding: 18px; margin-bottom: 14px; border-radius: 6px; }
-.formulario { display: flex; flex-direction: column; gap: 8px; } /* UM CAMPO ABAIXO DO OUTRO */
-label { font-size: 14px; }
-input, textarea { width: 100%; padding: 9px; border: 1px solid #aaa; border-radius: 4px; font: inherit; }
-button, .botao { background: var(--botao); color: white; padding: 10px; border: 0; border-radius: 4px; cursor: pointer; text-align: center; text-decoration: none; font: inherit; }
-.registros { padding-left: 22px; overflow-wrap: anywhere; }
-.registros li { margin-bottom: 8px; }
-.acoes { text-align: center; margin-top: 18px; }
-/* MOVER TEXTO: text-align: left (ESQUERDA), center (CENTRO), right (DIREITA) */
-/* MOVER BLOCO PARA BAIXO: aumentar margin-top; PARA CIMA: diminuir margin-top */
-/* ESPACAR CAMPOS: aumentar gap em .formulario */
+
+/* Estilos de form p: altere as propriedades abaixo para adaptar a prova. */
+form p {
+    margin-bottom: 4px; /* espaço entre nome do campo e input */
+}
+
+/* Estilos de form input:not([type="submit"]): altere as propriedades abaixo para adaptar a prova. */
+form input:not([type="submit"]) {
+  /* Largura do elemento. */
+    width: 100%;
+  /* Inclui bordas e padding no calculo da largura. */
+    box-sizing: border-box;
+}
+
+/* ALTERAR NA PROVA: posição da lista */
+/* Estilos de ul: altere as propriedades abaixo para adaptar a prova. */
+ul {
+  /* Modo de exibicao. */
+    display: inline-block;
+  /* Alinhamento do texto: left esquerda, center centro, right direita. */
+    text-align: left;
+}
+
+/* PARA MOVER: margin-left aumenta espaço à esquerda e empurra à direita;
+   margin-right aumenta espaço à direita; text-align: right alinha texto à direita. */

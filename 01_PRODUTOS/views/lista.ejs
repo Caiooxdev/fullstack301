@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<!-- Carrega o CSS separado da pasta public. -->
+<head><meta charset="UTF-8"><title>Lista</title><link rel="stylesheet" href="/style.css"></head>
+<body>
+    <!-- Titulo exibido na pagina. -->
+    <h1>Lista de Produtos</h1>
+    <ul>
+        <!-- EJS: executa codigo JavaScript no servidor para montar a pagina. -->
+        <% for (const item of registros) { %>
+            <li><%= item.nome %> — <%= item.preco %> — <%= item.quantidade %></li>
+        <!-- EJS: executa codigo JavaScript no servidor para montar a pagina. -->
+        <% } %>
+    </ul>
+    <!-- ALTERAR: cada formulário abaixo permite atualizar o campo nome de um registro. -->
+    <h2>Atualizar nome</h2>
+    <% for (const item of registros) { %>
+      <!-- POST corresponde à rota app.post('/atualizar') do servidor. -->
+      <form action="/atualizar" method="POST">
+        <!-- O ID oculto indica qual documento do MongoDB será alterado. -->
+        <input type="hidden" name="id" value="<%= item._id %>">
+        <!-- O usuário informa o novo valor do campo. -->
+        <p>Alterar <%= item.nome %>:</p>
+        <input type="text" name="novoValor" value="<%= item.nome %>" required>
+        <button type="submit">Atualizar</button>
+      </form>
+    <% } %>
+    <!-- Link para navegar entre formulario e lista. -->
+    <p><a href="/">Voltar ao cadastro</a></p>
+</body>
+</html>

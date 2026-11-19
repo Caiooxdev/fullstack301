@@ -1,13 +1,14 @@
 {
-  "name": "modelo-produtos",
+  "name": "modelo-p2-produtos",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "node servidor.js"
   },
   "dependencies": {
-    "express": "^4.21.2",
-    "ejs": "^3.1.10",
-    "mongodb": "^6.16.0"
+    "express": "4.21.2",
+    "body-parser": "1.20.3",
+    "ejs": "3.1.10",
+    "mongodb": "4.12.0"
   }
 }

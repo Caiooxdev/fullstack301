@@ -1,0 +1,61 @@
+GUIA DA PROVA — PESSOAS — LEIA PRIMEIRO
+
+1) NO VS CODE (COMEÇANDO DO ZERO)
+- Abra o VS Code e escolha Arquivo > Abrir Pasta. Abra exatamente a pasta 02_PESSOAS (a que contém package.json e servidor.js).
+- Menu Terminal > Novo Terminal. Confira se o caminho termina em 02_PESSOAS.
+- Confira se Node.js e npm estão disponíveis: node -v e npm.cmd -v (no PowerShell).
+- NÃO precisa rodar npm init -y: este projeto JÁ TEM package.json. Se começar um projeto vazio, aí sim use npm init -y.
+- Instale as dependências: npm.cmd install
+- Se o professor pedir para DIGITAR a versão explicitamente, use: npm.cmd install express@4.21.2 body-parser@1.20.3 ejs@3.1.10 mongodb@4.12.0
+  (Esse comando é opcional para estes ZIPs, pois as versões já estão fixadas no package.json.)
+- Confirme: npm.cmd list mongodb (deve mostrar mongodb@4.12.0).
+- Para executar: node servidor.js
+- Com o servidor ligado, abra http://localhost no navegador. NÃO feche o terminal.
+- Para parar: clique no terminal e pressione Ctrl+C.
+- Se o PowerShell bloquear npm, use npm.cmd em vez de npm.
+
+2) NO MONGODB COMPASS (O SERVIDOR MONGODB PRECISA ESTAR RODANDO)
+- Abra MongoDB Compass (o Compass é a interface visual; não é o servidor de banco).
+- Em New Connection, cole mongodb://127.0.0.1:27017 e clique Connect.
+- Se aparecer ECONNREFUSED, verifique se o serviço MongoDB Server (mongod) está instalado e iniciado. Só abrir Compass NÃO inicia o banco.
+- No painel esquerdo, procure o banco prova_fullstack. Após o PRIMEIRO cadastro, ele deve aparecer; use Refresh se necessário.
+- Dentro do banco, abra a coleção pessoas.
+- Na aba Documents, confira os registros salvos, incluindo _id e os campos do formulário.
+- Para testar: cadastre um registro no navegador, atualize a coleção no Compass e confirme o documento.
+- Volte ao navegador, abra /lista, altere um campo no formulário de atualização e confirme no Compass que o mesmo _id foi modificado.
+- Não precisa criar o banco ou a coleção manualmente: o primeiro insertOne cria ambos se não existirem.
+
+3) TESTE O FLUXO INTEIRO
+- http://localhost -> formulário -> Cadastrar -> página de resposta.
+- Clique em Voltar, depois Ver cadastrados -> /lista -> deve mostrar o registro.
+- Na lista, mude o campo indicado e clique Atualizar -> retorna à lista.
+- Confira no Compass que o documento foi alterado (updateOne).
+
+4) O QUE MUDAR SE A QUESTÃO FOR OUTRO TEMA
+- views/home.ejs: mude título, textos e input name conforme os campos pedidos.
+- servidor.js: mude BANCO e COLECAO se o enunciado pedir; ajuste as propriedades de dados = { ... } para corresponder aos name do formulário.
+- views/lista.ejs: mostre as propriedades novas (item.campo) e, se preciso, ajuste o campo que será atualizado no servidor.
+- Mantenha method="POST" com app.post('/cadastrar') e action="/cadastrar".
+- NÃO mude só o texto visível do input: é o atributo name que precisa bater com req.body.
+
+5) ERROS FREQUENTES
+- Cannot GET /cadastrar: o navegador enviou GET, mas a rota é POST. Use method="POST" no formulário.
+- Cannot POST /cadastrar: verifique action, method e se o servidor foi reiniciado após editar servidor.js.
+- ECONNREFUSED 127.0.0.1:27017: MongoDB Server não está rodando ou porta diferente.
+- Cannot find module: execute npm.cmd install na pasta que contém package.json.
+- EADDRINUSE :80: já existe um processo usando a porta 80; pare o servidor anterior com Ctrl+C.
+- Se mudar servidor.js, pare e inicie novamente com node servidor.js.
+- Se o banco/coleção não aparece no Compass, cadastre primeiro e use Refresh.
+
+6) CHECKLIST FINAL
+[ ] package.json e as quatro dependências, incluindo mongodb@4.12.0
+[ ] public/style.css e views/*.ejs
+[ ] express.static, bodyParser.urlencoded e view engine ANTES das rotas
+[ ] URI mongodb://127.0.0.1:27017, cliente.db(...).collection(...)
+[ ] Cada form com action/method correspondentes à rota
+[ ] Cada campo enviado tem name; senha sempre via POST, se existir
+[ ] res.render após await; cada caminho responde uma vez
+[ ] insertOne, find e updateOne testados
+[ ] Registros conferidos no Compass
+
+OBSERVAÇÃO: código verificado sintaticamente; não foi possível validar neste ambiente o MongoDB Server da sua faculdade.

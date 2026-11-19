@@ -1,31 +1,30 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Meus lembretes</title><link rel="stylesheet" href="/style.css"></head>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Lembretes</title>
+    <!-- Carrega o CSS separado da pasta public. -->
+    <link rel="stylesheet" href="/style.css">
+</head>
 <body>
-<!-- ALTERAR NA PROVA: titulo e cabecalho conforme imagem do professor -->
-<header><h1>Meus lembretes</h1></header>
-<main class="container">
-  <section class="cartao">
-    <h2>Cadastrar lembrete</h2>
-    <!-- ALTERAR NA PROVA: campos e action; os name devem coincidir com servidor.js -->
-    <form class="formulario" action="/cadastrar" method="POST">
-      <label for="titulo">Título</label><input id="titulo" name="titulo" type="text" required>
-      <label for="descricao">Descrição</label><textarea id="descricao" name="descricao" rows="3" required></textarea>
-      <label for="local">Local</label><input id="local" name="local" type="text" required>
-      <label for="data">Data</label><input id="data" name="data" type="date" required>
-      <label for="hora">Hora</label><input id="hora" name="hora" type="time" required>
-      <button type="submit">Salvar lembrete</button>
+    <!-- Titulo exibido na pagina. -->
+    <h1>Cadastro de Lembretes</h1>
+    <!-- Formulario: action indica a rota; method POST envia dados para cadastro. -->
+    <form action="/cadastrar" method="POST">
+    <p>Título:</p>
+    <!-- Campo do formulario: name deve ser igual ao campo lido em req.body. -->
+    <input type="text" name="titulo" required>
+    <p>Descrição:</p>
+    <!-- Campo do formulario: name deve ser igual ao campo lido em req.body. -->
+    <input type="text" name="descricao" required>
+    <p>Data:</p>
+    <!-- Campo do formulario: name deve ser igual ao campo lido em req.body. -->
+    <input type="date" name="data" required>
+        <br><br>
+        <!-- Campo do formulario: name deve ser igual ao campo lido em req.body. -->
+        <input type="submit" value="Cadastrar">
     </form>
-  </section>
-  <section class="cartao">
-    <h2>Lista de lembretes</h2>
-    <!-- FIND() no servidor; EJS mostra o resultado como LISTA -->
-    <ul class="registros">
-      <% if (registros.length === 0) { %><li>Nenhum lembrete cadastrado.</li><% } %>
-      <% registros.forEach(function(item) { %>
-        <li><strong><%= item.titulo %></strong> — <%= item.descricao %> — <%= item.local %> — <%= item.data %> às <%= item.hora %></li>
-      <% }); %>
-    </ul>
-  </section>
-</main>
-</body></html>
+    <!-- Link para navegar entre formulario e lista. -->
+    <p><a href="/lista">Ver lembretes cadastrados</a></p>
+</body>
+</html>
