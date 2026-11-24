@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <link rel="stylesheet" href="/labs.css">
+</head>
+<body>
+
+    <form action="/cadastrar_post.html" method="get">
+        <button>Cria Post</button>
+    </form>
+
+    <% posts.forEach(function(post) { %>
+
+        <div class="registro">
+            <strong><%= post.titulo %></strong>
+            <div><%= post.resumo %></div>
+            <div><%= post.conteudo %></div>
+        </div>
+
+    <% }); %>
+
+    <a href="/">Voltar</a>
+</body>
+</html>

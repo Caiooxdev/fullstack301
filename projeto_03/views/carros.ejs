@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Carros</title>
+    <link rel="stylesheet" href="/labs.css">
+</head>
+<body>
+    <h1>Carros disponíveis</h1>
+
+    <a href="/cadastro_usuario.html">Cadastro</a>
+    <a href="/login_carros.html">Login</a>
+    <a href="/gerenciar_carros">Gerenciar carros</a>
+
+    <% carros.forEach(function(carro) { %>
+
+        <div class="registro">
+            <h2><%= carro.marca %> <%= carro.modelo %></h2>
+            <p>Ano: <%= carro.ano %></p>
+            <p>Quantidade: <%= carro.qtde_disponivel %></p>
+
+            <% if (carro.qtde_disponivel == 0) { %>
+                <p>Esgotado</p>
+            <% } %>
+        </div>
+
+    <% }); %>
+
+    <a href="/">Voltar</a>
+</body>
+</html>

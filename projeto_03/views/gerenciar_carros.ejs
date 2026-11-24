@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciar carros</title>
+    <link rel="stylesheet" href="/labs.css">
+</head>
+<body>
+    <h1>Gerenciar carros</h1>
+
+    <h2>Cadastrar carro</h2>
+
+    <form action="/cadastrar_carro" method="post">
+        <p>Marca:</p>
+        <input name="marca" required>
+
+        <p>Modelo:</p>
+        <input name="modelo" required>
+
+        <p>Ano:</p>
+        <input type="number" name="ano" required>
+
+        <p>Quantidade:</p>
+        <input type="number" name="qtde_disponivel" min="0" required>
+
+        <button>Cadastrar</button>
+    </form>
+
+    <hr>
+
+    <% carros.forEach(function(carro) { %>
+
+        <div class="registro">
+
+            <form action="/atualizar_carro" method="post">
+                <input type="hidden" name="id" value="<%= carro._id %>">
+
+                <p>Marca:</p>
+                <input name="marca" value="<%= carro.marca %>" required>
+
+                <p>Modelo:</p>
+                <input name="modelo" value="<%= carro.modelo %>" required>
+
+                <p>Ano:</p>
+                <input type="number" name="ano" value="<%= carro.ano %>" required>
+
+                <p>Quantidade:</p>
+                <input type="number" name="qtde_disponivel" min="0"
+                value="<%= carro.qtde_disponivel %>" required>
+
+                <button>Atualizar</button>
+            </form>
+
+            <form action="/remover_carro" method="post">
+                <input type="hidden" name="id" value="<%= carro._id %>">
+                <button>Remover</button>
+            </form>
+
+            <% if (carro.qtde_disponivel > 0) { %>
+
+                <form action="/vender_carro" method="post">
+                    <input type="hidden" name="id" value="<%= carro._id %>">
+                    <button>Vender</button>
+                </form>
+
+            <% } else { %>
+
+                <p>Esgotado</p>
+
+            <% } %>
+
+        </div>
+
+    <% }); %>
+
+    <a href="/carros">Voltar</a>
+</body>
+</html>
